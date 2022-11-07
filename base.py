@@ -46,13 +46,13 @@ class Arena(metaclass=BaseSingleton):
 
 
     def _check_players_hp(self):
-        if self.player.hp <= 0 and self.enemy.hp <= 0:
+        if self.player.hp < 0 and self.enemy.hp < 0:
             self.battle_result = "В этой битве нет победителя!"
             return self._end_game()
-        if self.player.hp <= 0:
+        if self.player.hp < 0:
             self.battle_result = "Игрок проиграл битву!"
             return self._end_game()
-        if self.enemy.hp <= 0:
+        if self.enemy.hp < 0:
             self.battle_result = "Игрок выиграл битву!"
             return self._end_game()
 
